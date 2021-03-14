@@ -217,3 +217,4 @@
 [2021-03-14 20:03:14] slim-app.INFO: Establiment - GET - getSlider [] {"uid":"8e8fc15"}
 [2021-03-14 20:16:43] slim-app.INFO: Establiment - GET - getSlider [] {"uid":"4c3ff77"}
 [2021-03-14 20:18:28] slim-app.INFO: Establiment - GET - getSlider [] {"uid":"69aadb2"}
+[2021-03-14 20:30:14] slim-app.INFO: Usuaris - GET - validaToken [] {"uid":"df1be5b"}

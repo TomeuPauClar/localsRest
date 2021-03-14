@@ -98,7 +98,7 @@ class Usuari extends Table
                         $this->resposta->setDades($newUserData->dades);
                         $this->resposta->setCorrecta(true, "Usuari correcte.");
                     } else {
-                        $this->resposta->setCorrecta(false, "Contrasenya incorrecta.");
+                        $this->resposta->setCorrecta(false, "BadPassword");
                     }
               
             } else {
