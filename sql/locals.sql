@@ -125,6 +125,7 @@ DELIMITER ;
 
 INSERT INTO `categoriaFoto` (`nomCategoria`, `descripcio`) VALUES
 ('Sense Categoria', 'La foto no té categoria.'),
+('Foto Destacada', 'Es la foto destacada del establiment.'),
 ('Prova', 'Prova'),
 ('Basura', 'Llabreso'),
 ('Jo que se', 'Cabras obesas');

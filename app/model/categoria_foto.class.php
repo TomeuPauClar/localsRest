@@ -5,7 +5,7 @@ namespace App\Model;
 use App\Lib\Database;
 use App\Lib\Resposta;
 
-class CategoriaPreu extends Table
+class CategoriaFoto extends Table
 {
     private $resposta;
     private $conn;
@@ -13,8 +13,8 @@ class CategoriaPreu extends Table
 
     public function __construct()
     {
-        $tableName = 'categoriaPreu';
-        $tablePK = "idCategoriaPreu";
+        $tableName = 'categoriaFoto';
+        $tablePK = "idCategoriaFoto";
         parent::__construct($tableName, $tablePK);
         $this->conn = Database::getInstance()->getConnection();
         $this->resposta = new Resposta();
