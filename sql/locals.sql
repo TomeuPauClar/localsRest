@@ -404,6 +404,15 @@ INSERT INTO `comentari` (`idEstabliment`, `idUsuari`, `comentari`, `isValidat`, 
 (88, 2, 'I got up this morning? I almost wish I hadn\'t mentioned Dinah!\' she said to herself, \'his eyes are so VERY tired of swimming about here, O Mouse!\' (Alice thought this must be a LITTLE larger, sir,.', 0, '2016-03-12', 2.2),
 (75, 3, 'Dodo in an angry voice--the Rabbits Pat! Pat! Where are you? And then a voice she had grown in the pool as it was just in time to be sure, she had forgotten the little door: but, alas! the.', 0, '2013-12-15', 2.1);
 
+INSERT INTO `foto` (`idEstabliment`, `idCategoriaFoto`, `nomFoto`) VALUES
+(44,2,"img_44_2_1.jpg"),
+(65,2,"img_65_2_1.jpg"),
+(76,2,"img_76_2_1.jpg"),
+(89,2,"img_89_2_1.jpg"),
+(94,2,"img_94_2_1.jpg"),
+(97,2,"img_97_2_1.jpg"),
+(100,2,"img_100_2_1.jpg");
+
 DROP USER IF EXISTS 'locals'@'localhost';
 CREATE USER 'locals'@'localhost' IDENTIFIED BY 'Calafalco';
 GRANT ALL PRIVILEGES ON locals.* TO 'locals'@'localhost';

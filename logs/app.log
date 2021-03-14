@@ -214,3 +214,6 @@
 [2021-03-14 19:53:10] slim-app.INFO: Usuaris - POST - insert [] {"uid":"4c69b3b"}
 [2021-03-14 19:53:18] slim-app.INFO: Usuaris - POST - insert [] {"uid":"23b3cd2"}
 [2021-03-14 19:57:15] slim-app.INFO: Usuaris - POST - insert [] {"uid":"19bcb21"}
+[2021-03-14 20:03:14] slim-app.INFO: Establiment - GET - getSlider [] {"uid":"8e8fc15"}
+[2021-03-14 20:16:43] slim-app.INFO: Establiment - GET - getSlider [] {"uid":"4c3ff77"}
+[2021-03-14 20:18:28] slim-app.INFO: Establiment - GET - getSlider [] {"uid":"69aadb2"}

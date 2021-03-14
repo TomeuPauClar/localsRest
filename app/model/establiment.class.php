@@ -57,6 +57,7 @@ class Establiment extends Table
                 $foto = new Foto();
                 $tuples[$key]["foto"]= $foto->getFotoDestacada($valor["idEstabliment"])->dades;
             }
+            $this->resposta->setCorrecta(true, "Correcta.");
             $this->resposta->setDades($tuples);
             return $this->resposta;
         } catch (Exception $e) {
