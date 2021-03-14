@@ -206,3 +206,11 @@
 [2021-03-14 19:22:08] slim-app.INFO: Establiment - GET - getAll [] {"uid":"2103ef6"}
 [2021-03-14 19:22:25] slim-app.INFO: Establiment - GET - getAll [] {"uid":"116aaae"}
 [2021-03-14 19:22:49] slim-app.INFO: Establiment - GET - getAll [] {"uid":"89a66d2"}
+[2021-03-14 19:40:06] slim-app.INFO: Establiment - GET - getAll [] {"uid":"8af1995"}
+[2021-03-14 19:40:12] slim-app.INFO: Establiment - GET - getSlider [] {"uid":"df3be75"}
+[2021-03-14 19:52:45] slim-app.INFO: Usuaris - POST - insert [] {"uid":"5748ad7"}
+[2021-03-14 19:52:58] slim-app.INFO: Usuaris - POST - insert [] {"uid":"787a30e"}
+[2021-03-14 19:53:07] slim-app.INFO: Usuaris - POST - insert [] {"uid":"c652891"}
+[2021-03-14 19:53:10] slim-app.INFO: Usuaris - POST - insert [] {"uid":"4c69b3b"}
+[2021-03-14 19:53:18] slim-app.INFO: Usuaris - POST - insert [] {"uid":"23b3cd2"}
+[2021-03-14 19:57:15] slim-app.INFO: Usuaris - POST - insert [] {"uid":"19bcb21"}

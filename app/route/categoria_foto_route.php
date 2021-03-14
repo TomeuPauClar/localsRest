@@ -11,7 +11,7 @@ $app->group('/categoria-foto/', function () {
     });
 
     $this->get('{id}', function ($req, $res, $args) {
-        $this->logger->info("Categoria Foto - GET - getAll");
+        $this->logger->info("Categoria Foto - GET - getById");
         $obj = new CategoriaFoto();
         return $res->withJson($obj->getById($args["id"]));
     });

@@ -11,7 +11,7 @@ $app->group('/establiment/', function () {
     });
 
     $this->get('{id}', function ($req, $res, $args) {
-        $this->logger->info("Establiment - GET - getAll");
+        $this->logger->info("Establiment - GET - getById");
         $obj = new Establiment();
         return $res->withJson($obj->getById($args["id"]));
     });

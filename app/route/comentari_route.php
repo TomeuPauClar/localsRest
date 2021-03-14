@@ -11,7 +11,7 @@ $app->group('/comentari/', function () {
     });
 
     $this->get('{id}', function ($req, $res, $args) {
-        $this->logger->info("Comentari - GET - getAll");
+        $this->logger->info("Comentari - GET - getById");
         $obj = new Comentari();
         return $res->withJson($obj->getById($args["id"]));
     });

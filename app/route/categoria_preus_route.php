@@ -11,7 +11,7 @@ $app->group('/categoria-preu/', function () {
     });
 
     $this->get('{id}', function ($req, $res, $args) {
-        $this->logger->info("Categoria Preu - GET - getAll");
+        $this->logger->info("Categoria Preu - GET - getById");
         $obj = new CategoriaPreu();
         return $res->withJson($obj->getById($args["id"]));
     });

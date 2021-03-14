@@ -11,7 +11,7 @@ $app->group('/foto/', function () {
     });
 
     $this->get('{id}', function ($req, $res, $args) {
-        $this->logger->info("Foto - GET - getAll");
+        $this->logger->info("Foto - GET - getById");
         $obj = new Foto();
         return $res->withJson($obj->getById($args["id"]));
     });

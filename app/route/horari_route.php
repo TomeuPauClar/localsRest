@@ -11,7 +11,7 @@ $app->group('/horari/', function () {
     });
 
     $this->get('{id}', function ($req, $res, $args) {
-        $this->logger->info("Horari - GET - getAll");
+        $this->logger->info("Horari - GET - getById");
         $obj = new Horari();
         return $res->withJson($obj->getById($args["id"]));
     });

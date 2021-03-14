@@ -11,7 +11,7 @@ $app->group('/usuari/', function () {
     });
 
     $this->get('{id}', function ($req, $res, $args) {
-        $this->logger->info("Usuaris - GET - getAll");
+        $this->logger->info("Usuaris - GET - getById");
         $obj = new Usuari();
         return $res->withJson($obj->getById($args["id"]));
     });
@@ -21,6 +21,19 @@ $app->group('/usuari/', function () {
         $body = $req->getParsedBody();
         $obj = new Usuari();
         return $res->withJson($obj->insert($body));
+    });
+
+    $this->post('login/', function ($req, $res, $args) {
+        $this->logger->info("Usuaris - POST - login");
+        $body = $req->getParsedBody();
+        $obj = new Usuari();
+        return $res->withJson($obj->login($body));
+    });
+
+    $this->get('validar/{token}', function ($req, $res, $args) {
+        $this->logger->info("Usuaris - GET - validaToken");
+        $obj = new Usuari();
+        return $res->withJson($obj->validaToken($args["token"]));
     });
 
     $this->delete('{id}', function ($req, $res, $args) {

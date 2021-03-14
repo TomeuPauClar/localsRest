@@ -11,7 +11,7 @@ $app->group('/tipus-cuina/', function () {
     });
 
     $this->get('{id}', function ($req, $res, $args) {
-        $this->logger->info("TipusCuina - GET - getAll");
+        $this->logger->info("TipusCuina - GET - getById");
         $obj = new TipusCuina();
         return $res->withJson($obj->getById($args["id"]));
     });
@@ -23,7 +23,7 @@ $app->group('/tipus-cuina/', function () {
         return $res->withJson($obj->insert($body));
     });
     $this->post('establiment/{id}', function ($req, $res, $args) {
-        $this->logger->info("TipusCuina - POST - insert");
+        $this->logger->info("TipusCuina - POST - insertTipusCuinaEstabliment");
         $body = $req->getParsedBody();
         $obj = new TipusCuina();
         return $res->withJson($obj->insertTipusCuinaEstabliment($args["id"],$body));

@@ -16,7 +16,7 @@ class Usuari extends Table
     {
         $tableName = 'usuari';
         $tablePK = "idUsuari";
-        $tableFields=["idUsuari","email","nom","avatar","createdAt","updatedAt","token","tokenLimit","isAdmin"];
+        $tableFields=["idUsuari","email","nom","avatar","createdAt","token","isAdmin"];
         parent::__construct($tableName, $tablePK,$tableFields);
         $this->conn = Database::getInstance()->getConnection();
         $this->resposta = new Resposta();
@@ -78,6 +78,39 @@ class Usuari extends Table
         }
     }
 
+    public function login($dades)
+    {
+        try {
+            $nom = $dades['nom'];
+            $password = $dades['password'];
+
+            $stm = $this->conn->prepare("SELECT `idUsuari`,`nom`,`password` FROM `usuari` WHERE `nom` = :nom OR `email` = :nom");
+            $stm->bindValue(':nom', $nom);
+            $stm->execute();
+            $count = $stm->rowCount();
+            if ($count == 1) {
+                $tupla = $stm->fetch();
+                
+                    $hashedPassword = $tupla["password"];
+                    if (password_verify($password, $hashedPassword)) {
+                        $this->renovarToken($tupla["idUsuari"]);
+                        $newUserData = $this->getById($tupla["idUsuari"]);
+                        $this->resposta->setDades($newUserData->dades);
+                        $this->resposta->setCorrecta(true, "Usuari correcte.");
+                    } else {
+                        $this->resposta->setCorrecta(false, "Contrasenya incorrecta.");
+                    }
+              
+            } else {
+                $this->resposta->setCorrecta(false, "No existeix ninguna conta amb aquest correu electronic o usuari.");
+            }
+            return $this->resposta;
+        } catch (Exception $e) {
+            $this->resposta->setCorrecta(false, $e->getMessage());
+            return $this->resposta;
+        }
+    }
+
     public function renovarToken($idUsuari){
         $token = bin2hex(openssl_random_pseudo_bytes(16));
                         $tokenLimit = date('Y-m-d H:i:s', strtotime('+1 week'));
@@ -87,6 +120,36 @@ class Usuari extends Table
                         $stm->bindValue(':tokenLimit', $tokenLimit);
                         $stm->bindValue(':idUsuari', $idUsuari);
                         $stm->execute();
+    }
+
+    public function validaToken($token)
+    {
+        try {
+            $sql = "SELECT idUsuari, tokenLimit, isAdmin FROM `usuari` WHERE token= ?";
+            $stm = $this->conn->prepare($sql);
+            $stm->execute(array($token));
+            if ($tupla = $stm->fetch()) {
+                if ($tupla['tokenLimit'] > date('Y-m-d H:i:s')) {
+                    $tokenLimit = date('Y-m-d H:i:s', strtotime('+1 week'));
+                    $sql = "UPDATE `usuari` SET 
+                             tokenLimit= ?
+                              WHERE idUsuari = ?";
+                    $this->conn->prepare($sql)->execute(array($tokenLimit, $tupla["idUsuari"]));
+                    $newUserData = $this->getById($tupla["idUsuari"]);
+                    $this->resposta->setDades($newUserData->dades);
+                    $this->resposta->setCorrecta(true, "Token OK!");
+                } else {
+                    $this->resposta->setCorrecta(false, "Temps expirat");
+                }
+            } else {
+                $this->resposta->setCorrecta(false, "Token incorrecte.");
+            }
+
+            return $this->resposta;
+        } catch (Exception $e) {
+            $this->resposta->setCorrecta(false, "Error " . $e->getMessage(), 0);
+            return $this->resposta;
+        }
     }
 
     private function comprovarUsuari($nom, $email, $idUsuari = 0)
@@ -106,4 +169,6 @@ class Usuari extends Table
             return $e;
         }
     }
+
+    
 }
