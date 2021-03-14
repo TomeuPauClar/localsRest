@@ -53,7 +53,7 @@ class Table
             $stm->execute();
             $rowCount = $stm->rowCount();
             if ($rowCount > 0) {
-                $dades = $stm->fetchAll();
+                $dades = $stm->fetch();
                 $this->resposta->setCorrecta(true, "Correcta.", $rowCount);
                 $this->resposta->SetDades($dades);
             } else {

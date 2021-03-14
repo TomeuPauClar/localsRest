@@ -100,3 +100,12 @@
 [2021-03-14 01:57:19] slim-app.INFO: Categoria Preus - DELETE - delete [] {"uid":"1d73377"}
 [2021-03-14 01:57:34] slim-app.INFO: Categoria Preus - PUT - update [] {"uid":"079843b"}
 [2021-03-14 01:57:42] slim-app.INFO: Categoria Preus - DELETE - delete [] {"uid":"33b212b"}
+[2021-03-14 12:19:53] slim-app.INFO: Establiments - GET - getAll [] {"uid":"909b104"}
+[2021-03-14 14:43:50] slim-app.INFO: Establiments - GET - getAll [] {"uid":"382324b"}
+[2021-03-14 14:50:01] slim-app.INFO: Establiments - GET - getAll [] {"uid":"7d9bad1"}
+[2021-03-14 14:50:11] slim-app.INFO: Establiments - GET - getAll [] {"uid":"6e47fa2"}
+[2021-03-14 14:57:57] slim-app.INFO: Establiments - GET - getAll [] {"uid":"61f3ab1"}
+[2021-03-14 14:59:01] slim-app.INFO: Establiments - GET - getAll [] {"uid":"75870f0"}
+[2021-03-14 14:59:23] slim-app.INFO: Establiments - GET - getAll [] {"uid":"ba489f3"}
+[2021-03-14 14:59:40] slim-app.INFO: Establiments - GET - getAll [] {"uid":"32ebd04"}
+[2021-03-14 14:59:51] slim-app.INFO: Establiments - GET - getAll [] {"uid":"9d2cd81"}

@@ -13,8 +13,8 @@ class CategoriaPreus extends Table
 
     public function __construct()
     {
-        $tableName = 'categoria_preus';
-        $tablePK = "PK_ID_PREUS";
+        $tableName = 'categoriaPreu';
+        $tablePK = "idCategoriaPreu";
         parent::__construct($tableName, $tablePK);
         $this->conn = Database::getInstance()->getConnection();
         $this->resposta = new Resposta();
